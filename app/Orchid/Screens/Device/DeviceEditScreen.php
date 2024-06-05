@@ -105,14 +105,14 @@ class DeviceEditScreen extends Screen
     public function save(Device $device, Request $request)
     {
         $request->validate([
-            'device_name',
-            'company_id',
-            'vehicle_id',
-            'external_id',
-            'phone_number',
-            'status',
-            'comment',
-            'last_ping_at',
+            'device.device_name',
+            'device.company_id',
+            'device.vehicle_id',
+            'device.external_id',
+            'device.phone_number',
+            'device.status',
+            'device.comment',
+            'device.last_ping_at',
         ]);
 
         $device->fill($request->collect('device')->toArray())->save();

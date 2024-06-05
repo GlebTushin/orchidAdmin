@@ -105,9 +105,9 @@ class CompanyEditScreen extends Screen
     public function save(Company $company, Request $request)
     {
         $request->validate([
-            'company_name',
-        'lat',
-        'lng',
+            'company.company_name',
+        'company.lat',
+        'company.lng',
 
         ]);
 

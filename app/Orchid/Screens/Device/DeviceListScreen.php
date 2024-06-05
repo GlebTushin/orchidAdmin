@@ -25,6 +25,7 @@ class DeviceListScreen extends Screen
     public function query(): iterable
     {
         return ['devices' => Device::all(),
+
     ];
     }
 
@@ -60,7 +61,7 @@ class DeviceListScreen extends Screen
         return [
             DeviceListLayout::class,
             Layout::modal('createDevice',Layout::rows([
-                Select::make('vehicle_id')->fromModel(Vehicle::class,'name'),
+                Select::make('vehicle_id')->fromModel(Vehicle::where('company_id',1),'name'),
                 Input::make('name')->required()->title('Название'),
                 Input::make('external_id')->required()->title('Номер'),
                 Input::make('phone_number')->required()->title('Номер телефона'),

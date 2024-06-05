@@ -34,7 +34,7 @@ class VehicleListScreen extends Screen
      */
     public function name(): ?string
     {
-        return 'ТС';
+        return 'список ТС';
     }
 
     /**
@@ -90,7 +90,7 @@ class VehicleListScreen extends Screen
         $createdVehicle = new  Vehicle($request->merge([])->except('_token'));
         $createdVehicle->company()->associate(Company::findOrFail($request->company_id));
         $createdVehicle->save();
-        Toast::info('ТС добалено');
+        Toast::info(__('ТС добалено'));
     }
     public function remove(Request $request): void
     {

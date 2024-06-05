@@ -105,12 +105,12 @@ class VehicleEditScreen extends Screen
     public function save(vehicle $vehicle, Request $request)
     {
         $request->validate([
-            'vehicle_name',
-            'company_id',
-            'speed' ,
-            'number', 
-            'lat'  ,
-            'lng', 
+            'vehicle.vehicle_name',
+            'vehicle.company_id',
+            'vehicle.speed' ,
+            'vehicle.number', 
+            'vehicle.lat'  ,
+            'vehicle.lng', 
 
         ]);
         $vehicle->fill($request->collect('vehicle')->toArray())->save();
